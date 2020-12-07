@@ -1,0 +1,13 @@
+def duplicate_count(text):
+    ct = 0
+    seen = []
+    for a in text.lower():
+        if text.lower().count(a) > 1 and a not in seen:
+            ct = ct+1
+            seen.append(a)
+    return ct
+
+def duplicate_count_listcomp(text):
+    return len([c for c in set(s.lower()) if s.lower().count(c)>1])
+    
+print(duplicate_count("aabbcdef"))
