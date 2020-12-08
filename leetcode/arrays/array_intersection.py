@@ -15,15 +15,11 @@ class Solution:
         
         # Solution 1: O(n) time, O(n) space
         # search for as few elements as possible
-        if len(nums1) < len(nums2):
-            for element in nums1:
-                if element in nums2:
-                    intersection.append(element)
-        else:
-            for element in nums2:
-                if element in nums1:
-                    intersection.append(element)
-                    
+        for element in nums1:
+            if element in nums2:
+                intersection.append(element)
+                nums2.remove(element)
+                            
         # # Solution 2: O(n) time, O(n) space
         # # if the arrays are sorted, I can start searching for
         # # common elements at the smallest item in nums2 that is in nums1
